@@ -5,8 +5,8 @@
 ### XeLaTeX
 
 1. `astra` (по умолчанию) — свободные шрифты Astra Sans, Astra Serif, Liberation Mono.
-2. `times` — Шрифты Times New Roman, Arial, Courier New. Необходимо, чтобы у вас был подписан лицензионный договор с правообладателем шрифтов — компанией Monotype Imaging Inc.
-3. `cm` — Шрифты CMU, которые обычно включены в TeX Live.
+2. `times` — шрифты Times New Roman, Arial, Courier New. Необходимо, чтобы у вас был подписан лицензионный договор с правообладателем шрифтов — компанией Monotype Imaging Inc.
+3. `cm` — шрифты CMU, которые обычно включены в TeX Live.
 
 ### PdfLaTeX
 
@@ -72,7 +72,7 @@ docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$PWD":/doc "$IMAGE"
 
 #### Шрифты
 
-Для отчета можно использовать свободный аналог шрифтов Times New Roman и  - PT Astra.
+Для отчета можно использовать свободный аналог шрифтов Times New Roman — PT Astra.
 
 - [PT Astra Serif](http://astralinux.ru/information/fonts-astra/font-ptastra-serif-ver1003.zip)
 - [PT Astra Sans](http://astralinux.ru/information/fonts-astra/font-ptastrasans-ttf-ver1002.zip)
