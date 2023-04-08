@@ -1,4 +1,4 @@
-$ENV{'TEXINPUTS'}='./tex//:./lib//:./G7-32//:' . $ENV{'TEXINPUTS'};
+$ENV{'TEXINPUTS'}='./tex//:./lib//:./G7-32/tex//:' . $ENV{'TEXINPUTS'};
 $ENV{'BIBINPUTS'}='./tex//:' . $ENV{'BIBINPUTS'};
 $ENV{'BSTINPUTS'}='./GOST/bibtex/bst/gost//:' . $ENV{'BSTINPUTS'};
 
