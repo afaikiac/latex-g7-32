@@ -52,7 +52,7 @@ git clone --recurse-submodules https://github.com/afaikiac/latex-g7-32.git
 
 ### Overleaf
 
-[Uploading a project](https://www.overleaf.com/learn/how-to/Uploading_a_project)
+[How to upload a project](https://www.overleaf.com/learn/how-to/Uploading_a_project)
 
 ### Docker
 
