@@ -1,5 +1,5 @@
 $ENV{'TEXINPUTS'}='./tex//:./lib//:./lib/G7-32/tex//:' . $ENV{'TEXINPUTS'};
-$ENV{'BIBINPUTS'}='./tex//:' . $ENV{'BIBINPUTS'};
+$ENV{'BIBINPUTS'}='./res//:' . $ENV{'BIBINPUTS'};
 $ENV{'BSTINPUTS'}='./lib/GOST/bibtex/bst/gost//:' . $ENV{'BSTINPUTS'};
 
 $pdflatex = 'xelatex -synctex=1 -interaction=nonstopmode -shell-escape %O %S';
