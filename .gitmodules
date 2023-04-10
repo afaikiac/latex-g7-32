@@ -1,8 +1,8 @@
-[submodule "GOST"]
-	path = GOST
-	url = https://github.com/kia999/GOST
-	branch = master
-[submodule "G7-32"]
-	path = G7-32
+[submodule "lib/G7-32"]
+	path = lib/G7-32
 	url = https://github.com/afaikiac/latex-g7-32
 	branch = G7-32
+[submodule "lib/GOST"]
+	path = lib/GOST
+	url = https://github.com/kia999/GOST
+	branch = master
