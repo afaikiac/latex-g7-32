@@ -1,0 +1,37 @@
+name: Build and Release PDF
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          submodules: 'recursive'
+
+      - name: Update submodules
+        run: |
+          git submodule sync --recursive
+          git submodule update --init --recursive
+
+      - name: Build PDF
+        env:
+          IMAGE: afaikiac/latex-g7-32:overleaf
+        run: |
+          docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$PWD":/doc "$IMAGE" latexmk -f main
+
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: |
+            main.pdf
+          body: |
+            PDF build from commit: ${{ github.sha }}
+          token: ${{ secrets.GHCR_PAT }}
