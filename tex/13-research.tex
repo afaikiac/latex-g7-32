@@ -1,0 +1,184 @@
+\chapter{Экспериментальный раздел}
+\label{cha:research}
+
+Математическая формула может встречаться в тексте: $E = mc^2$. Для больших формул следует использовать окружение \verb|equation|:
+\begin{equation}\label{eq:f1}
+    E = mc^2.
+\end{equation}
+На формулу можно сослаться, например, так: (\ref{eq:f1}). См. также раздел \ref{cha:econom}. Использование других окружений для формул, таких как двойные доллары или скобки:
+\[
+    E = mc^2,
+\]
+не рекомендуется из-за отсутствия нумерации.
+
+В конце больших формул следует ставить подходящий знак препинания в соответствии с контекстом: точку, запятую, точку с запятой или ничего.
+
+Согласно ГОСТ, каждое новое обозначение, вводимое в формуле, должно быть пояснено сразу после неё. Например:
+\begin{equation}
+    E = mc^2,
+\end{equation}
+где $m$ "--- масса, $c$ "--- скорость света.
+
+Несколько примеров:
+
+Формула с текстом:
+\begin{equation}
+    50 \text{ яблок} \times 100 \text{ яблок} =
+    \textbf{ много яблок}
+\end{equation}
+
+Различные буквы и шрифты:
+\begin{equation}
+    \alpha,  \beta,  \gamma, \Gamma, \pi, \Pi, \phi, \varphi, \mu, \Phi, \xi, \zeta;
+\end{equation}
+\begin{equation}
+    \mathbf M, \mathcal C, \mathbb R, \sin \theta = \mathrm{sin} \theta.
+\end{equation}
+
+Скобки:
+\begin{equation}
+    ( a ), [ b ], \{ c \}, | d |, \| e \|, \langle f \rangle, \lfloor g \rfloor, \lceil h \rceil, \ulcorner i \urcorner;
+\end{equation}
+\begin{equation}
+    \left( a + b \right) \left[ 1 - \frac{b}{a+b} \right] = a;
+\end{equation}
+\begin{equation}
+    \sqrt{|xy|} \leq \left| \frac{x + y}{2} \right|;
+\end{equation}
+\begin{equation}
+    \int_a^b u \dv[2]{v}{x} \dd x = \left. u \dv{v}{x} \right|_a^b -\int_a^b \dv{u}{x} \dv{v}{x} \dd x;
+\end{equation}
+\begin{equation}
+    \tilde f(\omega) = \frac{1}{2\pi} \int_{-\infty}^\infty f(x)e^{-i\omega x} \dd x;
+\end{equation}
+\begin{equation}
+    \dot{\vec \omega} = \vec r_c \times \vec I;
+\end{equation}
+\begin{equation}
+    u = \frac{-y}{x^2 + y^2}, \quad v = \frac{x}{x^2 + y^2}, \quad \text{и} \quad w = 0.
+\end{equation}
+
+Последовательности:
+\begin{equation}
+    (1+x)^n = \sum_{i=0}^n \binom{n}{i} x^i;
+\end{equation}
+\begin{equation}
+    e^x = 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \cdots = \sum_{n \ge 0} \frac{x^n}{n!};
+\end{equation}
+
+Дроби:
+\begin{equation}
+    x = 
+    a_0 + \frac{1}{a_1 + \frac{1}{a_2 + \frac{1}{a_3 + a_4}}}
+    =
+    a_0 + \frac{1}{\displaystyle a_1
+        + \frac{1}{\displaystyle a_2
+        + \frac{1}{\displaystyle a_3 + a_4}}}.
+\end{equation}
+
+Матрицы:
+\begin{equation}
+    \begin{pmatrix}
+        1 & x & 0 \\
+        0 & 1 & -1
+    \end{pmatrix}
+    \begin{pmatrix}
+        1  \\
+        y  \\
+        1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        1 + xy  \\
+        y - 1
+    \end{pmatrix},
+    \quad\quad
+    \left(
+    \begin{matrix}
+        2 & 3 & 4\\
+        5 & 6 & 7\\
+        8 & 9 & 10
+    \end{matrix}
+    \right)
+    v = 0;
+\end{equation}
+\begin{equation}
+    \frac{n!}{k!(n-k)!} = \binom{n}{k};
+\end{equation}
+\begin{equation}
+    \deg A =
+    \left|
+    \begin{matrix}
+        -2 & 1 & 0 & 0 & \cdots & 0  \\
+        1 & -2 & 1 & 0 & \cdots & 0  \\
+        0 & 1 & -2 & 1 & \cdots & 0  \\
+        0 & 0 & 1 & -2 & \ddots & \vdots \\
+        \vdots & \vdots & \vdots & \ddots & \ddots & 1  \\
+        0 & 0 & 0 & \cdots & 1 & -2
+    \end{matrix}
+    \right|.
+\end{equation}
+
+Фигурная скобка для нескольких случаев:
+\begin{equation}
+    |x| =
+    \begin{cases}
+        x, & x \ge 0, \\
+        -x, & x< 0.
+    \end{cases}
+\end{equation}
+
+Формулы в несколько строк:
+\begin{align}
+    F &= \{ F_{x} \in F_{c} \mid (|S| > |C|) \\
+      &\wedge (\mathrm{minPixels} < |S| < \mathrm{maxPixels}) \\
+      &\wedge (|S_{\mathrm{conected}}| > |S| - \epsilon) \}
+\end{align}
+или
+\begin{multline}
+    A_0 = \frac{1}{(\alpha + t_x)^{r + s + x}}{}_2 F_1 \left( r + s + x, x + 1; r + s + x + 1; \frac{\alpha - \beta}{\alpha + t_x} \right) \\
+    \quad - \frac{1}{(\alpha + T)^{r + s + x}}{}_2 F_1 \left( r + s + x, x + 1; r + s + x + 1; \frac{\alpha - \beta}{\alpha + T} \right).
+\end{multline}
+
+Логика, доказательства:
+\begin{equation}
+    (\forall \varepsilon > 0) (\exists N \in \mathbb Z^+) (\forall n \ge N) (|x_n - a| < \varepsilon \iff \lim_{n \to +\infty} x_n = a);
+\end{equation}
+\begin{equation}
+    A \implies B, \quad A \iff B, \quad A = \{z \in \mathbb Z \mid z = \bar z \};
+\end{equation}
+\begin{equation}
+    f: X \to Y, \quad f: x \overset{F}{\mapsto} 5x \cos(\tfrac{\pi x}{2})
+\end{equation}
+\begin{equation}
+    \frac{\cancel{\sqrt 2} \sin(x + 2)}{\cancel{2 \cdot \cos(\sfrac{\pi}{4})} \sin(x)} = \frac{\sin(x + 2)}{\sin(x)}, \quad \cancelto{0}{\sin(0)} \equiv 0.
+\end{equation}
+
+\section{Определения и теоремы}
+
+В ГОСТе не представлены инструкции по оформлению определений и теорем. Однако в мировой практике принято следующее стилевое решение, которое можно использовать и в дипломной работе:
+
+\begin{Df}[Метрическое пространство]\label{df:example}
+    Метрическим пространством называют пару $(S; \rho)$, где для функции-\textit{метрики} $\rho: S \to \mathbb R^+$, если верно следующие три условия:
+    \begin{enumerate}
+        \item $a \in S : \rho(a, a) = 0$,
+        \item $a, b \in S : \rho(a, b) = \rho(b, a)$,
+        \item $a, b, c \in S : \rho(a, b) + \rho(b, c) \ge \rho(a, c)$.
+    \end{enumerate}
+\end{Df}
+
+\begin{Th}[Хаусдорф]\label{th:example}
+    В полном метрическом пространстве множество является компактом тогда и только тогда, когда оно замкнуто и вполне ограничено.
+\end{Th}
+\begin{proof}
+    Текст доказательства.
+\end{proof}
+
+\begin{Ex}
+    Множество вещественных чисел $\mathbb R$ с заданной на нём метрикой $\rho(a, b) = |a - b|$ формируют метрическое пространство.
+\end{Ex}
+\begin{proof}
+    Следует из определения \ref{df:example}.
+\end{proof}
+
+Аналогично картинкам и таблицам, на определения, теоремы и другие блоки можно ссылаться при помощи команды \verb|\ref|: например, на теорему \ref{th:example}.

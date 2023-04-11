@@ -36,12 +36,6 @@ def EvaluateDiplomas():
 В листинге~\ref{lst:sample01} работают русские буквы. Сильная магия. Однако, работает
 только во включаемых файлах, прямо в \TeX{} нельзя.
 
-% Обратите внимание, что включается не ../src/..., а inc/src/...
-% В Makefile есть соответствующее правило для inc/src/*,
-% которое копирует исходные файлы из ../src и конвертирует из UTF-8 в KOI8-R.
-% Кстати, поэтому использовать можно только русские буквы и ASCII,
-% весь остальной UTF-8 вроде CJK и египетских иероглифов -- нельзя.
-
 \lstinputlisting[language=C,caption=Пример (\Code{test.c}),label=lst:sample01]{inc/src/test.c}
 
 \else
@@ -94,22 +88,3 @@ grammar = { rule } ;
 
 \fi
 \fi
-% Для вставки реального кода лучше использовать \texttt{\textbackslash lstinputlisting} (который понимает
-% UTF8) и стили \Code{realcode} либо \Code{simplecode} (в зависимости от размера куска).
-
-
-
-
-Можно также использовать окружение \Code{verbatim}, если \Code{listings} чем-то не
-устраивает. Только следует помнить, что табы в нём <<съедаются>>. Существует так же команда \Code{\textbackslash{}verbatiminput} для вставки файла.
-
-\begin{verbatim}
-a_b = a + b; // русский комментарий
-if (a_b > 0)
-    a_b = 0;
-\end{verbatim}
-
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: "rpz"
-%%% End:
