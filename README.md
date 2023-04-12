@@ -1,30 +1,8 @@
-# Шаблон LaTeX для оформления отчетов о НИР, расчётно-пояснительной записки к курсовым и дипломным работам
+# $\LaTeX$ шаблон
 
-**Важно** не забыть о сабмодулях в директории `./lib`, как указано в разделе [сборка шаблона](#сборка-шаблона).
+Данный шаблон разработан для оформления отчетов о НИР, расчетно-пояснительных записок к курсовым и дипломным работам в соответствии с ГОСТ 7.32-2017 и демонстрирует возможности стиля [G7-32](https://github.com/afaikiac/latex-g7-32/tree/G7-32).
 
-## Опции класса документа
-
-### XeLaTeX
-
-1. `astra` (по умолчанию) — свободные шрифты Astra Sans, Astra Serif, Liberation Mono.
-2. `times` — шрифты Times New Roman, Arial, Courier New. Необходимо, чтобы у вас был подписан лицензионный договор с правообладателем шрифтов — компанией Monotype Imaging Inc.
-3. `cm` — шрифты CMU, которые обычно включены в TeX Live.
-
-### PdfLaTeX
-
-1. `times` (по умолчанию) — шрифты из пакета cyrtimes: Nimbus Roman и Nimbus Sans.
-2. `pscyr` — шрифты из пакета pscyr: Antiqua PSCyr, Textbook PSCyr, ERKurier PSCyr.
-3. `cm` — шрифты CM, которые обычно включены в TeX Live.
-
-Если какой-то шрифт не найден, то вместо него будет использоваться соответствующий шрифт CM.
-
-Эти опции нужно задавать в `\documentclass`, например так: 
-
-```latex
-\documentclass[utf8x, times, 14pt]{G7-32}
-```
-
-## Структура шаблона
+## Структура
 
 ```palin
 latex-g7-32
@@ -32,21 +10,23 @@ latex-g7-32
 │       изображения, исходные файлы для листингов, библиография
 ├── lib
 │       пакеты и макросы LaTeX
-├── lib/G7-32 
+├── lib/G7-32/tex 
 │       LaTeX-файлы стилей и классов для стандарта GOST 7.32
-├── lib/GOST 
+├── lib/GOST/bibtex/bst/gost
 │       стили библиографии для оформления по GOST
 ├── tex 
-│       исходные файлы LaTeX для документа
+│       исходные файлы LaTeX
 ├── .latexmkrc
 │       конфигурация для утилиты latexmk, которая задает
 │       переменные среды и определяет настройки сборки документа
 └── main.tex 
-        основной файл LaTeX для документа, который включает
+        основной файл LaTeX, который включает
         структуру документа и вызовы других файлов
 ```
 
-## Сборка шаблона
+## Сборка
+
+**Важно** не забыть о сабмодулях в директории `./lib`.
 
 ```bash
 git clone --recurse-submodules https://github.com/afaikiac/latex-g7-32.git
@@ -70,25 +50,6 @@ docker pull $IMAGE
 docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$PWD":/doc "$IMAGE" latexmk main
 ```
 
-### Локально
+## Полезное
 
-#### Шрифты
-
-Для отчета можно использовать свободный аналог шрифтов Times New Roman — PT Astra.
-
-- [PT Astra Serif](http://astralinux.ru/information/fonts-astra/font-ptastra-serif-ver1003.zip)
-- [PT Astra Sans](http://astralinux.ru/information/fonts-astra/font-ptastrasans-ttf-ver1002.zip)
-
-##### Установка на Linux
-
-1. Скопируйте шрифты в `$HOME/.fonts/`.
-2. Выполните команду `fc-cache -f -v`.
-
-##### Установка на Windows
-
-1. Скопируйте шрифты в каталог `C:\Windows\Fonts`.
-2. Выполните команду `fc-cache -f -v`.
-
-#### Зависимости
-
-...
+- Можно использовать свободный аналог Times New Roman — [PT Astra Serif](http://astralinux.ru/information/fonts-astra/font-ptastra-serif-ver1003.zip) и [PT Astra Sans](http://astralinux.ru/information/fonts-astra/font-ptastrasans-ttf-ver1002.zip). Подробнее читать здесь: [опции класса документа](https://github.com/afaikiac/latex-g7-32/tree/G7-32#%D0%BE%D0%BF%D1%86%D0%B8%D0%B8-%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B0-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0).
