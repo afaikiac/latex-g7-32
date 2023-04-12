@@ -3,7 +3,7 @@ name: Build and Release PDF
 on:
   push:
     tags:
-      - "v*"
+      - "*"
 
 jobs:
   build:
@@ -15,16 +15,11 @@ jobs:
         with:
           submodules: 'recursive'
 
-      - name: Update submodules
-        run: |
-          git submodule sync --recursive
-          git submodule update --init --recursive
-
       - name: Build PDF
         env:
-          IMAGE: afaikiac/latex-g7-32:overleaf
+          IMAGE: ghcr.io/afaikiac/latex-g7-32:overleaf
         run: |
-          docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$PWD":/doc "$IMAGE" latexmk -f main
+          docker run --net=none -v "$PWD":/doc "$IMAGE" latexmk main
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
@@ -34,4 +29,4 @@ jobs:
             main.pdf
           body: |
             PDF build from commit: ${{ github.sha }}
-          token: ${{ secrets.GHCR_PAT }}
+          token: ${{ secrets.GITHUB_TOKEN }}
