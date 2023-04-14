@@ -34,7 +34,7 @@ git clone --recurse-submodules https://github.com/afaikiac/latex-g7-32.git
 
 ### Overleaf
 
-Упакуйте репозиторий в zip-архив и импортируйте его как новый проект в Overleaf. Подробнее здесь: [how to upload a project](https://www.overleaf.com/learn/how-to/Uploading_a_project).
+Упакуйте репозиторий в zip-архив и импортируйте его как новый проект в Overleaf. Подробнее: [how to upload a project](https://www.overleaf.com/learn/how-to/Uploading_a_project). В проекте измените компилятор на `XeLaTeX`. Подробнее: [changing compiler](https://www.overleaf.com/learn/how-to/Changing_compiler).
 
 ### Docker
 
@@ -47,14 +47,14 @@ IMAGE="ghcr.io/afaikiac/latex-g7-32:overleaf"
 ```
 
 ```bash
-docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$PWD":/doc "$IMAGE" latexmk main
+docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$PWD":/doc "$IMAGE" latexmk -pdfxe main
 ```
 
 ### GitHub Action
 
 1. Создайте форк этого репозитория.
 
-2. Измените разрешения для `GITHUB_TOKEN` на **read and write**. Подробнее здесь: [setting the permissions of the `GITHUB_TOKEN` for your repository](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#setting-the-permissions-of-the-github_token-for-your-repository).
+2. Измените разрешения для `GITHUB_TOKEN` на **read and write**. Подробнее: [setting the permissions of the `GITHUB_TOKEN` for your repository](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#setting-the-permissions-of-the-github_token-for-your-repository).
 
 ```bash
 git tag what-a-cool-tag
@@ -68,4 +68,6 @@ git push --tags
 
 ## Полезное
 
-- Можно использовать свободный аналог Times New Roman — [PT Astra Serif](http://astralinux.ru/information/fonts-astra/font-ptastra-serif-ver1003.zip) и [PT Astra Sans](http://astralinux.ru/information/fonts-astra/font-ptastrasans-ttf-ver1002.zip). Подробнее здесь: [опции класса документа](https://github.com/afaikiac/latex-g7-32/tree/G7-32#%D0%BE%D0%BF%D1%86%D0%B8%D0%B8-%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B0-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0).
+- Можно использовать свободный аналог Times New Roman — [PT Astra Serif](http://astralinux.ru/information/fonts-astra/font-ptastra-serif-ver1003.zip) и [PT Astra Sans](http://astralinux.ru/information/fonts-astra/font-ptastrasans-ttf-ver1002.zip). Подробнее: [опции класса документа](https://github.com/afaikiac/latex-g7-32/tree/G7-32#%D0%BE%D0%BF%D1%86%D0%B8%D0%B8-%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B0-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0).
+
+- Шаблон также поддерживает сборку с `pdflatex` с помощью команды `latexmk -pdf main`. Кратко о различиях: [other compilers](https://www.overleaf.com/learn/latex/Choosing_a_LaTeX_Compiler#Other_compilers).

@@ -19,7 +19,7 @@ jobs:
         env:
           IMAGE: ghcr.io/afaikiac/latex-g7-32:overleaf
         run: |
-          docker run --net=none -v "$PWD":/doc "$IMAGE" latexmk main
+          docker run --net=none -v "$PWD":/doc "$IMAGE" latexmk -pdfxe main
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
