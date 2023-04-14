@@ -34,7 +34,9 @@ git clone --recurse-submodules https://github.com/afaikiac/latex-g7-32.git
 
 ### Overleaf
 
-Упакуйте репозиторий в zip-архив и импортируйте его как новый проект в Overleaf. Подробнее: [how to upload a project](https://www.overleaf.com/learn/how-to/Uploading_a_project). В проекте измените компилятор на `XeLaTeX`. Подробнее: [changing compiler](https://www.overleaf.com/learn/how-to/Changing_compiler).
+1. Упакуйте репозиторий в zip-архив и импортируйте его как новый проект в Overleaf. Подробнее: [how to upload a project](https://www.overleaf.com/learn/how-to/Uploading_a_project). 
+
+2. В проекте измените компилятор на `XeLaTeX`. Подробнее: [changing compiler](https://www.overleaf.com/learn/how-to/Changing_compiler).
 
 ### Docker
 
@@ -67,6 +69,8 @@ git push --tags
 Поздравляю! Создается новый релиз с тегом `what-a-cool-tag` и PDF во вложениях.
 
 ## Полезное
+
+- [Mануал](https://manpages.debian.org/testing/latexmk/latexmk.1.en.html) по `latexmk`.
 
 - Можно использовать свободный аналог Times New Roman — [PT Astra Serif](http://astralinux.ru/information/fonts-astra/font-ptastra-serif-ver1003.zip) и [PT Astra Sans](http://astralinux.ru/information/fonts-astra/font-ptastrasans-ttf-ver1002.zip). Подробнее: [опции класса документа](https://github.com/afaikiac/latex-g7-32/tree/G7-32#%D0%BE%D0%BF%D1%86%D0%B8%D0%B8-%D0%BA%D0%BB%D0%B0%D1%81%D1%81%D0%B0-%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0).
 
