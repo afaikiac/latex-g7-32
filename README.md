@@ -26,19 +26,19 @@ latex-g7-32
 
 ## Сборка
 
+### Overleaf
+
+1. Скачайте [архив](https://github.com/afaikiac/latex-g7-32/releases/latest/download/latex-g7-32.zip) и импортируйте его как новый проект в Overleaf. Подробнее: [how to upload a project](https://www.overleaf.com/learn/how-to/Uploading_a_project).
+
+2. В проекте измените компилятор на `XeLaTeX`. Подробнее: [changing compiler](https://www.overleaf.com/learn/how-to/Changing_compiler).
+
+### Docker
+
 **Важно** не забыть о сабмодулях в директории `./lib`.
 
 ```bash
 git clone --recurse-submodules https://github.com/afaikiac/latex-g7-32.git
 ```
-
-### Overleaf
-
-1. Упакуйте репозиторий в zip-архив и импортируйте его как новый проект в Overleaf. Подробнее: [how to upload a project](https://www.overleaf.com/learn/how-to/Uploading_a_project). 
-
-2. В проекте измените компилятор на `XeLaTeX`. Подробнее: [changing compiler](https://www.overleaf.com/learn/how-to/Changing_compiler).
-
-### Docker
 
 ```bash
 cd latex-g7-32
