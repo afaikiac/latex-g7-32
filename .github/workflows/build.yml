@@ -77,6 +77,7 @@ jobs:
         gh release create --draft "$tag" --title "$tag" --notes "$body"
 
     - name: Download all workflow run artifacts
+      if: ${{ env.RUN_LATEXMK_PDFLATEX == 'true' || env.RUN_LATEXMK_XELATEX == 'true' }}
       uses: actions/download-artifact@v3
       with:
         name: ${{ needs.build.outputs.artifact }}
@@ -99,12 +100,13 @@ jobs:
       run: gh release upload "${{ steps.tag.outputs.tag }}" "${{ env.LATEXMK_PDFLATEX_JOBNAME }}.pdf"
 
     - name: Checkout Code
+      if: ${{ env.CREATE_OVERLEAF_ARCHIVE == 'true' }}
       uses: actions/checkout@v3
       with:
         submodules: 'recursive'
 
     - name: Upload Archive for Overleaf
-      if: ${{ env.RUN_LATEXMK_PDFLATEX == 'true' }}
+      if: ${{ env.CREATE_OVERLEAF_ARCHIVE == 'true' }}
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GH_REPO: ${{ github.repository }}
