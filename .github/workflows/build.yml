@@ -14,12 +14,7 @@ env:
   OVERLEAF_ARCHIVE: ${{ github.event.repository.name }}-overleaf.zip
   OVERLEAF_SOURCES: ( lib res tex .latexmkrc main.tex )
 
-on:
-  push:
-    branches:
-      - main
-      - master
-  pull_request:
+on: [push, pull_request]
 
 jobs:
   build:
