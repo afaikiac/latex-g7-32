@@ -1,6 +1,6 @@
 # $\LaTeX$ шаблон
 
-Данный шаблон разработан для оформления отчетов о НИР, расчетно-пояснительных записок к курсовым и дипломным работам в соответствии с ГОСТ 7.32-2017 и демонстрирует возможности стиля [G7-32](https://github.com/afaikiac/latex-g7-32/tree/G7-32).
+Данный шаблон разработан для оформления отчетов о НИР, расчетно-пояснительных записок к курсовым и дипломным работам в соответствии с ГОСТ 7.32-2017 и демонстрирует возможности стиля [G7-32](https://github.com/afaikiac/G7-32).
 
 ## Структура
 
@@ -26,9 +26,11 @@ latex-g7-32
 
 ## Сборка
 
+Здесь перечислены возможные удобные варианты, как можно собрать документ с помощью `latexmk`. Вы можете комбинировать их или придумать свой.
+
 ### Overleaf
 
-1. Скачайте [архив](https://github.com/afaikiac/latex-g7-32/releases/latest/download/latex-g7-32-overleaf.zip) и импортируйте его как новый проект в Overleaf. Подробнее: [how to upload a project](https://www.overleaf.com/learn/how-to/Uploading_a_project).
+1. Скачайте [архив](https://github.com/afaikiac/latex-g7-32/releases/latest/download/latex-g7-32-overleaf.zip) из последнего релиза и импортируйте его как новый проект в Overleaf. Подробнее: [how to upload a project](https://www.overleaf.com/learn/how-to/Uploading_a_project).
 
 2. Для использования XeLaTeX вместо pdfLaTeX в проекте измените компилятор на `XeLaTeX`. Подробнее: [changing compiler](https://www.overleaf.com/learn/how-to/Changing_compiler).
 
