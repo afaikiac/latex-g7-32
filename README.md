@@ -68,15 +68,9 @@ docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$PWD":"$WORKDIR" "$
 
 2. Измените разрешения для `GITHUB_TOKEN` на **read and write**. Подробнее: [setting the permissions of the `GITHUB_TOKEN` for your repository](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-github-actions-settings-for-a-repository#setting-the-permissions-of-the-github_token-for-your-repository).
 
-```bash
-git tag what-a-cool-tag
-```
+3. Сделайте коммит в ветку `main` или `master`.
 
-```bash
-git push --tags
-```
-
-Поздравляю! Создается новый релиз с тегом `what-a-cool-tag` и PDF во вложениях.
+Поздравляю! Создается новый `Draft` релиз с PDF во вложениях.
 
 ## Полезное
 
