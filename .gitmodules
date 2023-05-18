@@ -1,7 +1,6 @@
 [submodule "lib/G7-32"]
 	path = lib/G7-32
-	url = https://github.com/afaikiac/latex-g7-32
-	branch = G7-32
+	url = https://github.com/afaikiac/G7-32.git
 [submodule "lib/GOST"]
 	path = lib/GOST
 	url = https://github.com/kia999/GOST
