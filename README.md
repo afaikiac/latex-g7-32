@@ -30,15 +30,13 @@ latex-g7-32
 
 ### Overleaf
 
-1. Скачайте [архив](https://github.com/afaikiac/latex-g7-32/releases/latest/download/latex-g7-32-overleaf.zip) из последнего релиза и импортируйте его как новый проект в Overleaf. Подробнее: [how to upload a project](https://www.overleaf.com/learn/how-to/Uploading_a_project).
-
-2. Для использования XeLaTeX вместо pdfLaTeX в проекте измените компилятор на `XeLaTeX`. Подробнее: [changing compiler](https://www.overleaf.com/learn/how-to/Changing_compiler).
-
-### Docker
+Скачайте [архив](https://github.com/afaikiac/latex-g7-32/releases/latest/download/latex-g7-32-overleaf.zip) из последнего релиза и импортируйте его как новый проект в Overleaf. Подробнее: [how to upload a project](https://www.overleaf.com/learn/how-to/Uploading_a_project).
 
 > **Note**
-> 
-> Не забывайте о сабмодулях `lib/G7-32` и `lib/GOST`. Это нужно учитывать при работе с `git`.
+>
+> Для использования XeLaTeX вместо pdfLaTeX в проекте измените компилятор на `XeLaTeX`. Подробнее: [changing compiler](https://www.overleaf.com/learn/how-to/Changing_compiler).
+
+### Docker
 
 ```bash
 git clone --recurse-submodules https://github.com/afaikiac/latex-g7-32.git
@@ -67,6 +65,10 @@ docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$(pwd)":"$WORKDIR" 
 docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$(pwd)":"$WORKDIR" "$IMAGE" latexmk -pdf
 ```
 
+> **Note**
+> 
+> Не забывайте о сабмодулях `lib/G7-32` и `lib/GOST`. Это нужно учитывать при работе с `git`.
+
 ### GitHub Action
 
 1. Создайте новый репозиторий `Use this template -> Create a new repository`.
@@ -78,7 +80,6 @@ docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$(pwd)":"$WORKDIR" 
 **Поздравляем!** Создается новый `Draft` релиз с PDF во вложениях.
 
 > **Note**
->
 > В [build.yml](https://github.com/afaikiac/latex-g7-32/blob/main/.github/workflows/build.yml#L3) можно найти переменные среды:
 >
 > ```yml
