@@ -43,14 +43,14 @@ jobs:
     - name: Build PDF with XeLaTeX
       if: ${{ env.RUN_LATEXMK_XELATEX == 'true' }}
       run: |
-        docker run --net=none -v $PWD:${{ env.DOCKER_WORKDIR }} ${{ env.DOCKER_IMAGE }} \
-          latexmk -pdfxe -jobname=${{ env.LATEXMK_XELATEX_JOBNAME }}
+        docker run --net=none -v "$(pwd)":"${{ env.DOCKER_WORKDIR }}" ${{ env.DOCKER_IMAGE }} \
+          latexmk -pdfxe -jobname="${{ env.LATEXMK_XELATEX_JOBNAME }}"
 
     - name: Build PDF with pdfLaTeX
       if: ${{ env.RUN_LATEXMK_PDFLATEX == 'true' }}
       run: |
-        docker run --net=none -v $PWD:${{ env.DOCKER_WORKDIR }} ${{ env.DOCKER_IMAGE }} \
-          latexmk -pdf -jobname=${{ env.LATEXMK_PDFLATEX_JOBNAME }}
+        docker run --net=none -v "$(pwd)":"${{ env.DOCKER_WORKDIR }}" ${{ env.DOCKER_IMAGE }} \
+          latexmk -pdf -jobname="${{ env.LATEXMK_PDFLATEX_JOBNAME }}"
 
     - name: Archive Built PDF
       uses: actions/upload-artifact@v3
@@ -82,7 +82,7 @@ jobs:
         body="${{ env.RELEASE_BODY }}"
         gh release create --draft "$tag" --title "$tag" --notes "$body"
 
-    - name: Download all workflow run artifacts
+    - name: Download All Workflow Run Artifacts
       if: ${{ env.RUN_LATEXMK_PDFLATEX == 'true' || env.RUN_LATEXMK_XELATEX == 'true' }}
       uses: actions/download-artifact@v3
       with:

@@ -56,12 +56,12 @@ WORKDIR="/doc"
 
 ```bash
 # XeLaTeX
-docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$PWD":"$WORKDIR" "$IMAGE" latexmk -pdfxe
+docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$(pwd)":"$WORKDIR" "$IMAGE" latexmk -pdfxe
 ```
 
 ```bash
 # pdfLaTeX
-docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$PWD":"$WORKDIR" "$IMAGE" latexmk -pdf
+docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$(pwd)":"$WORKDIR" "$IMAGE" latexmk -pdf
 ```
 
 ### GitHub Action
