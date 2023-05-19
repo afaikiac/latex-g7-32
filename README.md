@@ -1,4 +1,4 @@
-# $\LaTeX$ шаблон
+# G7-32 template
 
 Данный шаблон разработан для оформления отчетов о НИР, расчетно-пояснительных записок к курсовым и дипломным работам в соответствии с ГОСТ 7.32-2017 и демонстрирует возможности стиля [G7-32](https://github.com/afaikiac/G7-32).
 
@@ -36,7 +36,9 @@ latex-g7-32
 
 ### Docker
 
-**Важно** не забыть о сабмодулях в директории `./lib`.
+> **Note**
+> 
+> Не забывайте о сабмодулях `lib/G7-32` и `lib/GOST`. Это нужно учитывать при работе с `git`.
 
 ```bash
 git clone --recurse-submodules https://github.com/afaikiac/latex-g7-32.git
@@ -54,13 +56,14 @@ IMAGE="ghcr.io/afaikiac/latex-g7-32:overleaf"
 WORKDIR="/doc"
 ```
 
+#### XeLaTeX
+
 ```bash
-# XeLaTeX
 docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$(pwd)":"$WORKDIR" "$IMAGE" latexmk -pdfxe
 ```
 
+#### pdfLaTeX
 ```bash
-# pdfLaTeX
 docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$(pwd)":"$WORKDIR" "$IMAGE" latexmk -pdf
 ```
 
@@ -72,13 +75,22 @@ docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$(pwd)":"$WORKDIR" 
 
 3. Сделайте коммит в основную ветку, которая называется `main` или `master`.
 
-Поздравляем! Создается новый `Draft` релиз с PDF во вложениях.
+**Поздравляем!** Создается новый `Draft` релиз с PDF во вложениях.
+
+> **Note**
+>
+> В [build.yml](https://github.com/afaikiac/latex-g7-32/blob/main/.github/workflows/build.yml#L3) можно найти переменные среды:
+>
+> ```yml
+> env:
+>   RUN_LATEXMK_XELATEX: true
+>   RUN_LATEXMK_PDFLATEX: true
+>   CREATE_OVERLEAF_ARCHIVE: true
+> ```
+>
+> Изменяя их, можно контролировать, что именно будет собираться в `Draft` релиз.
 
 ## Полезное
-
-### Инструменты
-
-...
 
 ### G7-32
 
@@ -113,15 +125,6 @@ git submodule update --remote
       latexmk -pdf -c
 ```
 
-### GitHub Action
+### Инструменты
 
-В [build.yml](https://github.com/afaikiac/latex-g7-32/blob/main/.github/workflows/build.yml#L3) можно найти переменные среды:
-
-```yml
-env:
-  RUN_LATEXMK_XELATEX: true
-  RUN_LATEXMK_PDFLATEX: true
-  CREATE_OVERLEAF_ARCHIVE: true
-```
-
-Изменяя их, можно контролировать, что именно будет собираться в `Draft` релиз.
+...
