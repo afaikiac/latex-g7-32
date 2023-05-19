@@ -81,6 +81,7 @@ docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$(pwd)":"$WORKDIR" 
 **Поздравляем!** Создается новый `Draft` релиз с PDF во вложениях.
 
 > **Note**
+>
 > В [build.yml](https://github.com/afaikiac/latex-g7-32/blob/main/.github/workflows/build.yml#L3) можно найти переменные среды:
 >
 > ```yml
