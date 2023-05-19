@@ -61,6 +61,7 @@ docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$(pwd)":"$WORKDIR" 
 ```
 
 #### pdfLaTeX
+
 ```bash
 docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$(pwd)":"$WORKDIR" "$IMAGE" latexmk -pdf
 ```
