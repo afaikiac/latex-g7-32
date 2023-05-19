@@ -32,7 +32,7 @@ on:
 
 jobs:
   build:
-    name: Compile PDFs
+    name: Build PDF
     runs-on: ubuntu-latest
     steps:
     - name: Checkout Code
@@ -40,19 +40,19 @@ jobs:
       with:
         submodules: 'recursive'
 
-    - name: Compile PDF with XeLaTeX
+    - name: Build PDF with XeLaTeX
       if: ${{ env.RUN_LATEXMK_XELATEX == 'true' }}
       run: |
         docker run --net=none -v $PWD:${{ env.DOCKER_WORKDIR }} ${{ env.DOCKER_IMAGE }} \
           latexmk -pdfxe -jobname=${{ env.LATEXMK_XELATEX_JOBNAME }}
 
-    - name: Compile PDF with pdfLaTeX
+    - name: Build PDF with pdfLaTeX
       if: ${{ env.RUN_LATEXMK_PDFLATEX == 'true' }}
       run: |
         docker run --net=none -v $PWD:${{ env.DOCKER_WORKDIR }} ${{ env.DOCKER_IMAGE }} \
           latexmk -pdf -jobname=${{ env.LATEXMK_PDFLATEX_JOBNAME }}
 
-    - name: Archive Built PDFs
+    - name: Archive Built PDF
       uses: actions/upload-artifact@v3
       with:
         name: ${{ env.ARTIFACT_NAME }}
