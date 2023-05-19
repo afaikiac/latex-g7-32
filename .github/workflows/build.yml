@@ -13,10 +13,10 @@ env:
   CREATE_OVERLEAF_ARCHIVE: true
   OVERLEAF_ARCHIVE: ${{ github.event.repository.name }}-overleaf.zip
   OVERLEAF_SOURCES: |
-    res
-    lib
-    tex
-    .latexmkrc
+    res \
+    lib \
+    tex \
+    .latexmkrc \
     main.tex
 
   ARTIFACT_NAME: artifact
