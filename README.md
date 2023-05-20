@@ -34,7 +34,7 @@ latex-g7-32
 
 > **Note**
 >
-> Для использования XeLaTeX вместо pdfLaTeX в проекте измените компилятор на `XeLaTeX`. Подробнее: [changing compiler](https://www.overleaf.com/learn/how-to/Changing_compiler).
+> Чтобы использовать XeLaTeX вместо pdfLaTeX, в меню проекта измените компилятор на `XeLaTeX`. Подробнее: [changing compiler](https://www.overleaf.com/learn/how-to/Changing_compiler).
 
 ### Docker
 
@@ -68,7 +68,7 @@ docker run --rm -i --user="$(id -u):$(id -g)" --net=none -v "$(pwd)":"$WORKDIR" 
 
 > **Note**
 > 
-> Не забывайте о сабмодулях `lib/G7-32` и `lib/GOST`. Это нужно учитывать при работе с `git`.
+> Не забывайте о сабмодулях `lib/G7-32` и `lib/GOST`. Их нужно учитывать при работе с `git`.
 
 ### GitHub Action
 
